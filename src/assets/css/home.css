@@ -122,6 +122,18 @@ footer {
   .nav-pills .nav-link {
     padding: 5px !important;
   }
+
+  .gameImg {
+    width: 104px;
+    height: 104px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .gameImg {
+    width: 94px;
+    height: 94px;
+  }
 }
 
 @media screen and (max-width:460px) {
@@ -132,20 +144,33 @@ footer {
   .tabTitle {
     font-size: 12px;
   }
-}
 
-@media screen and (max-width:455px) {
   .gameImg {
-    width: 94px;
-    height: 94px;
+    width: 84px;
+    height: 84px;
   }
 }
+
+@media screen and (max-width: 430px) {
+  .gameImg {
+    width: 74px;
+    height: 74px;
+  }
+}
+
 
 @media screen and (max-width: 400px) {
   .hotImg {
     height: 120px;
   }
+
+  .gameImg {
+    width: 64px;
+    height: 64px;
+  }
 }
+
+
 
 
 
@@ -169,10 +194,10 @@ footer {
 }
 
 
-@media screen and (max-width:350px) {
+@media screen and (max-width: 350px) {
   .gameImg {
-    width: 84px;
-    height: 84px;
+    width: 54px;
+    height: 54px;
   }
 }
 
@@ -180,8 +205,13 @@ footer {
   .logo {
     font-size: 20px;
   }
+}
 
-
+@media screen and (max-width: 330px) {
+  .gameImg {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -203,12 +233,7 @@ footer {
 
 }
 
-@media screen and (max-width:310px) {
-  .gameImg {
-    width: 74px;
-    height: 74px;
-  }
-}
+
 
 
 @media screen and (max-width: 300px) {
@@ -219,5 +244,10 @@ footer {
 
   .tabTitle {
     font-size: 11px;
+  }
+
+  .gameImg {
+    width: 44px;
+    height: 44px;
   }
 }
