@@ -4,8 +4,30 @@ body {
   width: 100vw !important;
 }
 
-#left-tabs-example {
-  overflow-x: hidden !important;
+.gameImg {
+  width: 114px;
+  height: 114px;
+
+}
+
+.customGameTab {
+  margin-bottom: 15px;
+  width: 100vw !important;
+  /* border: 1px solid #171e23; */
+  background: #005A8D;
+
+  border-radius: 30px !important;
+  /* background: #28323B !important; */
+  color: #fff !important;
+  padding: 10px;
+  overflow-x: scroll;
+  /* scrollbar-width: thin; */
+}
+
+.customGameTab::-webkit-scrollbar {
+
+  display: none;
+
 }
 
 .fa-solid {
@@ -18,10 +40,7 @@ body {
   object-fit: cover;
 }
 
-.gameImg {
-  height: 100px;
-  width: 200px;
-}
+
 
 footer {
   background: linear-gradient(0deg, #02293a, #00354d);
@@ -35,10 +54,12 @@ footer {
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  background: transparent !important;
-  border: 2px solid goldenrod !important;
-  box-shadow: 0px 3px 14px -5px #ffc107;
+.nav-pills .show>.nav-link {
+  background: #024e71 !important;
+  /* background: rgb(249, 187, 31); */
+  border: 1px solid #00354D !important;
+  /* border: 2px solid goldenrod !important;
+  box-shadow: 0px 3px 14px -5px #ffc107; */
 }
 
 .fade:not(.show) {
@@ -46,8 +67,13 @@ footer {
   visibility: hidden !important;
 }
 
+.tabTitle {
+  font-size: 16px;
+  text-wrap: nowrap !important;
+}
+
 .tabImg {
-  height: 35px !important;
+  height: 35px;
 }
 
 @media screen and (min-width: 980px) and (max-width: 1030px) {
@@ -62,12 +88,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 860px) {
-  .tabTitle {
-    font-size: 13px;
-    text-align: center;
-  }
-}
+
 
 @media screen and (max-width: 800px) {
   .bannerImg {
@@ -75,31 +96,48 @@ footer {
   }
 }
 
-@media screen and (max-width: 615px) {
-  .gameImg {
-    height: 80px;
-    width: 100%;
-  }
-}
+
 
 @media screen and (max-width: 580px) {
   .bannerImg {
     height: 200px;
   }
 
-  .tabTitle {
-    padding: 0 5px;
+
+}
+
+@media screen and (max-width:540px) {
+  .customGameTab {
+    padding: 5px;
   }
 
-  .gameImg {
-    height: 70px;
-    width: 90%;
+  .tabImg {
+    height: 28px;
+  }
+
+  .tabTitle {
+    font-size: 13px;
+  }
+
+  .nav-pills .nav-link {
+    padding: 5px !important;
   }
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width:460px) {
+  .tabImg {
+    height: 23px;
+  }
+
   .tabTitle {
-    padding: 0 20px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width:455px) {
+  .gameImg {
+    width: 94px;
+    height: 94px;
   }
 }
 
@@ -109,16 +147,9 @@ footer {
   }
 }
 
-@media screen and (max-width: 390px) {
-  .gameImg {
-    height: 80px;
-  }
-}
+
 
 @media screen and (max-width: 380px) {
-  .tabTitle {
-    padding: 0 10px;
-  }
 
   .footerTitle {
     font-size: 13px;
@@ -137,15 +168,11 @@ footer {
   }
 }
 
-@media screen and (max-width: 370px) {
-  .gameImg {
-    width: 100%;
-  }
-}
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width:350px) {
   .gameImg {
-    height: 70px;
+    width: 84px;
+    height: 84px;
   }
 }
 
@@ -154,16 +181,11 @@ footer {
     font-size: 20px;
   }
 
-  .tabTitle {
-    font-size: 12px;
-    padding: 0 3px;
-  }
+
 }
 
 @media screen and (max-width: 320px) {
-  .gameImg {
-    height: 60px;
-  }
+
 
   .fa-solid {
     font-size: 18px !important;
@@ -178,24 +200,24 @@ footer {
     padding: 0 1px !important;
   }
 
-  .tabImg {
-    height: 25px !important;
+
+}
+
+@media screen and (max-width:310px) {
+  .gameImg {
+    width: 74px;
+    height: 74px;
   }
 }
 
-@media screen and (max-width: 304px) {
-  /* #left-tabs-example-tabpane-1 .col-6 {
-        width: 45% !important;
-    }
-
-    /* #left-tabs-example-tabpane-1 {
-        margin-left: 15px !important;
-    } */
-}
 
 @media screen and (max-width: 300px) {
   .footerImg {
     height: 20px;
     width: 20px;
+  }
+
+  .tabTitle {
+    font-size: 11px;
   }
 }

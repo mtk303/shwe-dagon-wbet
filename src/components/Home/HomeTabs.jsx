@@ -15,7 +15,7 @@ function GameList({ game, products, launchGame }) {
         products.map((product) => (
           <Link
             key={product.id}
-            className='col-5  col-md-4 col-lg-3 col-xl-2  mb-1 mb-sm-4 btn'
+            className='col-4  col-sm-3  col-lg-2  mb-1 mb-sm-4 btn'
             onClick={() => launchGame(game?.code, product.code)}
           >
             <img
@@ -78,42 +78,41 @@ function HomeTabs() {
   };
 
   return (
+
     <Tab.Container id='left-tabs-example' defaultActiveKey={0}>
       <div className='mt-3'>
-        <div className='d-flex ' style={{ width: '100%' }}>
-          <div className=''>
-            <div>
-              <Nav variant='pills' className='flex-column'>
-                <Nav.Item>
-                  <Nav.Link
-                    className='border rounded-3 mb-1 py-0 py-sm-1 mb-sm-2 px-0 d-flex flex-column align-items-center '
-                    eventKey={0}
-                    onClick={() => setUrl(BASE_URL + '/allGameProducts')}
-                  >
-                    <img style={{ height: '35px' }} src={allGames} />
-                    <span className='tabTitle text-center text-light'>
-                      All Games
-                    </span>
-                  </Nav.Link>
-                  {gameTypes &&
-                    gameTypes.map((tab) => (
-                      <Nav.Link
-                        key={tab.id}
-                        onClick={() =>
-                          setUrl(BASE_URL + '/gameTypeProducts/' + tab.id)
-                        }
-                        className='border rounded-3 mb-2 py-0 py-sm-1 mb-sm-2 px-0 d-flex flex-column align-items-center '
-                        eventKey={tab.id}
-                      >
-                        <img className='tabImg' src={tab.img_url} />
-                        <span className='tabTitle text-center text-light'>
-                          {tab.name}
-                        </span>
-                      </Nav.Link>
-                    ))}
-                </Nav.Item>
-              </Nav>
-            </div>
+        <div className='' style={{ width: '100%' }}>
+          <div className='d-flex flex-row '>
+            <Nav variant='pills' className='d-flex flex-row customGameTab '>
+              <Nav.Item className='d-flex flex-row gap-1 gap-sm-3 gap-md-4'>
+                <Nav.Link
+                  className=' rounded-5   py-1    px-sm-2 d-flex   align-items-center '
+                  eventKey={0}
+                  onClick={() => setUrl(BASE_URL + '/allGameProducts')}
+                >
+                  <img className='tabImg' src={allGames} />
+                  <span className='tabTitle text-center text-light'>
+                    All Games
+                  </span>
+                </Nav.Link>
+                {gameTypes &&
+                  gameTypes.map((tab) => (
+                    <Nav.Link
+                      key={tab.id}
+                      onClick={() =>
+                        setUrl(BASE_URL + '/gameTypeProducts/' + tab.id)
+                      }
+                      className=' rounded-5 rounded-sm-5   py-1   px-sm-2 d-flex   align-items-center ' style={{ height: 'max-content' }}
+                      eventKey={tab.id}
+                    >
+                      <img className='tabImg' src={tab.img_url} />
+                      <span className='tabTitle text-center text-light'>
+                        {tab.name}
+                      </span>
+                    </Nav.Link>
+                  ))}
+              </Nav.Item>
+            </Nav>
           </div>
           <div className=' '>
             {loading && (
@@ -124,7 +123,7 @@ function HomeTabs() {
               </div>
             )}
             <div>
-              <Tab.Pane className='ms-1 row' eventKey={0}>
+              <Tab.Pane className='mx-auto row me-1 me-sm-0' eventKey={0}>
                 <GameList
                   game={games[0]}
                   products={slots}
@@ -148,7 +147,7 @@ function HomeTabs() {
               </Tab.Pane>
             </div>
             <div>
-              <Tab.Pane className=' ms-1 row' eventKey={games?.id}>
+              <Tab.Pane className='mx-auto   row me-1 me-sm-0' eventKey={games?.id}>
                 <GameList
                   game={games}
                   products={products}
@@ -160,6 +159,8 @@ function HomeTabs() {
         </div>
       </div>
     </Tab.Container>
+
+
   );
 }
 
