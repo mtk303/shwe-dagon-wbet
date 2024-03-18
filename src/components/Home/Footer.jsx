@@ -6,10 +6,10 @@ import React from 'react';
 // import history from '../../assets/img/history.png';
 // import summary from '../../assets/img/summary.png';
 
-import '../../assets/css/footer.css'
 
 import { IoHome } from "react-icons/io5";
 import { IoGiftSharp } from "react-icons/io5";
+import { FaPersonCircleCheck } from "react-icons/fa6";
 import { LuFileClock } from "react-icons/lu";
 import { IoNewspaper } from "react-icons/io5";
 
@@ -20,6 +20,7 @@ const Footer = () => {
   const footerIcons = [
     { img: IoHome, title: 'Home', link: '/' },
     { img: IoGiftSharp, title: 'Promotion', link: '/promotion' },
+    { img:FaPersonCircleCheck,title:'Agent',link:'/agent' },
     { img: LuFileClock, title: 'History', link: '/history' },
     { img: IoNewspaper, title: 'GameLog', link: '/game-log' },
   ];
