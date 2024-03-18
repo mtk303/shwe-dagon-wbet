@@ -6,6 +6,7 @@ import '../../assets/css/home.css';
 import useFetch from '../../hooks/useFetch';
 import BASE_URL from '../../hooks/baseURL';
 import { Link, useNavigate } from 'react-router-dom';
+import { Dropdown } from 'react-bootstrap';
 
 function GameList({ game, products, launchGame }) {
   return (
@@ -82,18 +83,23 @@ function HomeTabs() {
     <Tab.Container id='left-tabs-example' defaultActiveKey={0}>
       <div className='mt-3'>
         <div className='' style={{ width: '100%' }}>
-          <div className='d-flex flex-row '>
-            <Nav variant='pills' className='d-flex flex-row customGameTab '>
-              <Nav.Item className='d-flex flex-row gap-1 gap-sm-3 gap-md-4'>
+          <div className='container'>
+            <Dropdown className=' customDropdown d-md-none  mb-4'>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Game Types
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
                 <Nav.Link
-                  className=' rounded-5   py-1    px-sm-2 d-flex   align-items-center '
+                  className=' rounded-5   py-1    d-flex   align-items-center customNavItem '
+
                   eventKey={0}
                   onClick={() => setUrl(BASE_URL + '/allGameProducts')}
-                >
-                  <img className='tabImg' src={allGames} />
-                  <span className='tabTitle text-center text-light'>
-                    All Games
-                  </span>
+                > <Dropdown.Item className='rounded-5 px-2 ' >
+                    <img className='tabImg' src={allGames} />
+                    <span className='tabTitle text-center'>
+                      All Games
+                    </span></Dropdown.Item>
                 </Nav.Link>
                 {gameTypes &&
                   gameTypes.map((tab) => (
@@ -102,17 +108,53 @@ function HomeTabs() {
                       onClick={() =>
                         setUrl(BASE_URL + '/gameTypeProducts/' + tab.id)
                       }
-                      className=' rounded-5 rounded-sm-5   py-1   px-sm-2 d-flex   align-items-center ' style={{ height: 'max-content' }}
+                      className=' rounded-5 rounded-sm-5  py-1   d-flex   align-items-center customNavItem' style={{ height: 'max-content' }}
                       eventKey={tab.id}
                     >
-                      <img className='tabImg' src={tab.img_url} />
-                      <span className='tabTitle text-center text-light'>
-                        {tab.name}
-                      </span>
+                      <Dropdown.Item className='rounded-5 px-2 '>
+                        <img className='tabImg' src={tab.img_url} />
+                        <span className='tabTitle text-center  '>
+                          {tab.name}
+                        </span>
+                      </Dropdown.Item>
                     </Nav.Link>
+
                   ))}
-              </Nav.Item>
-            </Nav>
+              </Dropdown.Menu>
+            </Dropdown>
+
+            <div className='d-flex flex-row justify-content-end'>
+              <Nav variant='pills' className='d-none d-md-flex flex-row customGameTab '>
+                <Nav.Item className='d-none d-md-flex flex-row gap-1  '>
+                  <Nav.Link
+                    className=' rounded-5   py-1    px-sm-2 d-flex   align-items-center '
+                    eventKey={0}
+                    onClick={() => setUrl(BASE_URL + '/allGameProducts')}
+                  >
+                    <img className='tabImg' src={allGames} />
+                    <span className='tabTitle text-center text-light'>
+                      All Games
+                    </span>
+                  </Nav.Link>
+                  {gameTypes &&
+                    gameTypes.map((tab) => (
+                      <Nav.Link
+                        key={tab.id}
+                        onClick={() =>
+                          setUrl(BASE_URL + '/gameTypeProducts/' + tab.id)
+                        }
+                        className=' rounded-5 rounded-sm-5   py-1   px-sm-2 d-flex   align-items-center ' style={{ height: 'max-content' }}
+                        eventKey={tab.id}
+                      >
+                        <img className='tabImg' src={tab.img_url} />
+                        <span className='tabTitle text-center text-light'>
+                          {tab.name}
+                        </span>
+                      </Nav.Link>
+                    ))}
+                </Nav.Item>
+              </Nav>
+            </div>
           </div>
           <div className=' '>
             {loading && (
